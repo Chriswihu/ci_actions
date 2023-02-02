@@ -16,7 +16,7 @@
 
         <!-- TODO: Add the URL to your own tomcat server. Used to deploy your WAR-file -->
         <!-- IMPORTANT-2: Observe we are NOT using /manager/html but /manager/text for script uploads -->
-        <remote.server>http://134.122.76.165:8081/manager/html</remote.server>
+        <remote.server>http://134.122.76.165:8081/manager/text</remote.server>
 
     </properties>
 
@@ -184,18 +184,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.3.1</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.tomcat.maven</groupId>
-                <artifactId>tomcat7-maven-plugin</artifactId>
-                <version>2.2</version>
-                <configuration>
-                    <server>TomcatServer</server>
-                    <url>${remote.server}</url>
-                    <username>${remote.user}</username>
-                    <password>${remote.password}</password>
-                    <update>true</update>
-                </configuration>
             </plugin>
         </plugins>
     </build>
